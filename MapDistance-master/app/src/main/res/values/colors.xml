@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#282828</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#fa2432</color>
+    <color name="lt_blue">#e23adfe2</color>
+    <color name="dark_blue">#207680</color>
+    <color name="transparent">#003ad2e2</color>
+    <color name="BLACK">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="green">#43ae38</color>
+    <color name="gps_blue">#4885ed</color>
+</resources>

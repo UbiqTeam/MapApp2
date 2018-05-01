@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MapDistance</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="clearMap">CLEAR</string>
+    <string name="dropGPS">DROP</string>
+    <string name="lock">LOCK</string>
+</resources>

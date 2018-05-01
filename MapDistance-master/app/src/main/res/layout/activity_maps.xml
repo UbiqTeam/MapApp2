@@ -1,0 +1,247 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BLACK"
+    >
+    <fragment
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="575dp"
+        tools:context="com.example.spencer.mapdistance.MapsActivity"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/drop"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    </fragment>
+
+    <TextView
+        android:id="@+id/markerCountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="46dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/areaText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="46dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="0dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/coordinatesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="46dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="30dp"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/clearButton"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/map"
+        android:background="@color/colorAccent"
+        android:text="@string/clearMap"
+        android:visibility="visible"
+        tools:text="@string/clearMap" />
+
+    <TextView
+        android:id="@+id/lengthsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/clearButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="1dp"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/drop"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_alignBottom="@+id/toggle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/gps_blue"
+        android:text="@string/dropGPS"
+        android:visibility="invisible"
+        tools:text="@string/dropGPS" />
+
+    <Button
+        android:id="@+id/setMarkerButton"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_alignBottom="@+id/toggle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/green"
+        android:text="@string/lock"
+        android:visibility="visible"
+        tools:text="@string/lock" />
+
+    <Button
+        android:id="@+id/setMarkerGPS"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_alignBottom="@+id/toggle"
+        android:background="@color/green"
+        android:text="@string/lock"
+        android:visibility="gone"
+        tools:text="@string/lock" />
+
+    <RadioGroup
+        android:id="@+id/toggle"
+        android:layout_width="182dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/map"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/blue_outline"
+        android:checkedButton="@+id/manToggle"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <RadioButton
+            android:id="@+id/manToggle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_weight="0.90"
+            android:background="@drawable/toggle_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Manual"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/gpsToggle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_weight="0.89"
+            android:background="@drawable/toggle_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="GPS"
+            android:textColor="@color/white" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnEditSpots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignLeft="@+id/toggle"
+        android:layout_alignStart="@+id/toggle"
+        android:text="Edit"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/markerCountText"
+        android:layout_alignBottom="@+id/markerCountText"
+        android:layout_toEndOf="@+id/setMarkerGPS"
+        android:layout_toRightOf="@+id/setMarkerGPS"
+        android:text="Order" />
+
+    <Button
+        android:id="@+id/btnCreateRoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btnOrder"
+        android:layout_alignRight="@+id/btnOrder"
+        android:layout_below="@+id/btnOrder"
+        android:layout_marginTop="24dp"
+        android:text="Create Road"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btnCreateTaken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btnCreateRoad"
+        android:layout_alignRight="@+id/btnCreateRoad"
+        android:layout_below="@+id/btnCreateRoad"
+        android:layout_marginTop="31dp"
+        android:text="Mark Taken"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btnOffLimits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btnCreateTaken"
+        android:layout_alignRight="@+id/btnCreateTaken"
+        android:layout_below="@+id/btnCreateTaken"
+        android:layout_marginTop="21dp"
+        android:text="Off Limits"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btnMarkers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/clearButton"
+        android:layout_toStartOf="@+id/clearButton"
+        android:text="Markers"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnOffLimits"
+        android:layout_toEndOf="@+id/lengthsText"
+        android:layout_toRightOf="@+id/lengthsText"
+        android:text="Convert"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btnMakePath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnConvert"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/lengthsText"
+        android:layout_toRightOf="@+id/lengthsText"
+        android:text="Path"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>
